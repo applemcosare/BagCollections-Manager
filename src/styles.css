@@ -1,0 +1,370 @@
+:root {
+  --primary-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+  --secondary-color: rgba(243, 243, 243, 0.8); /* Light Gray with 80% opacity */
+  --tertiary-color: rgba(2, 90, 2, 0.8); /* Orange with 80% opacity */
+  --text-color: #fff; /* White */
+  --background-color: rgba(33, 33, 33, 0.8); /* Dark Gray with 80% opacity */
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition-duration: 0.3s;
+  --focus-outline: 3px solid #ffffff; /* Focus outline for accessibility */
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://wallpaper.dog/large/20481257.jpg');
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.detail-box {
+  background-color: rgba(0, 0, 0, 0.247); /* Transparent white background */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  color: #a5a5a5;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #acacac;
+}
+
+.qr-code {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.qr-code canvas {
+  width: 200px;
+  height: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"] {
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 18px;
+  background-color: var(--secondary-color);
+  transition: border-color var(--transition-duration), background-color var(--transition-duration);
+  color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus {
+  border-color: var(--tertiary-color);
+  outline: var(--focus-outline);
+  background-color: var(--background-color);
+}
+/* Additional styles for price and description */
+input[type="number"],
+textarea {
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 18px;
+  background-color: var(--secondary-color);
+  transition: border-color var(--transition-duration), background-color var(--transition-duration);
+  color: var(--text-color);
+  resize: vertical; /* Allow vertical resizing for textarea */
+}
+
+input[type="number"]:focus,
+textarea:focus {
+  border-color: var(--tertiary-color);
+  outline: var(--focus-outline);
+  background-color: var(--background-color);
+}
+
+button {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--tertiary-color);
+  outline: var(--focus-outline);
+  transform: translateY(-2px);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Bag List */
+.bag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bag-item {
+  width: calc(20.33% - 20px); /* Each item takes one-third of the container width with some spacing */
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  background-image: url('https://w0.peakpx.com/wallpaper/141/754/HD-wallpaper-3d-white-texture-white-geometric-texture-3d-white-background-3d-gypsum-white-texture-white-creative-background.jpg');
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration);
+}
+
+.bag-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-color);
+}
+
+.bag-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform var(--transition-duration);
+}
+
+.bag-item:hover img {
+  transform: scale(1.05);
+}
+
+.bag-details {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.bag-details h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.bag-details p {
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.bag-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Responsive Design */
+
+  @media (max-width: 768px) {
+    .column,
+    .bag-item {
+      flex: 1 1 100%; /* Single column for mobile devices */
+    }
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center
+  }
+  
+  .pdf-download-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pdf-download-link {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #025a02, #037b03); /* Gradient background */
+    color: #fff; /* White */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .pdf-download-link:hover {
+    background: linear-gradient(45deg, #037b03, #04a004); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+  }
+  
+  .pdf-download-link:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+    background: linear-gradient(45deg, #025a0238, #037b0313); /* Revert to original gradient on click */
+  }
+  
+  .pdf-download-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(3, 123, 3, 0.5); /* Add focus outline for accessibility */
+  }
+  
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .edit-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .edit-actions button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+  }
+  
+  .edit-actions button:hover {
+    background-color: var(--tertiary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* PDFReport */
+  .pdf-report-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pdf-report-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  .pdf-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .pdf-report-table th,
+  .pdf-report-table td {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+  }
+  
+  .pdf-report-table th {
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+  }
+  
+  .pdf-report-table td {
+    background-color: var(--secondary-color);
+  }
+  
+  .pdf-report-table th:first-child,
+  .pdf-report-table td:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
+  
+  .pdf-report-table th:last-child,
+  .pdf-report-table td:last-child {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+  
+  .pdf-report-download-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+  }
+  
+  .pdf-report-download-btn:hover {
+    background-color: var(--tertiary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* BagDetail */
+  .detail-box {
+    margin-top: 20px;
+  }
+  
+  /* ImportExport */
+.csv-import-export {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.csv-import-export input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.csv-import-export a {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.csv-import-export a:hover {
+  background-color: var(--tertiary-color);
+  transform: translateY(-2px);
+}
+
+.csv-import-export a:active {
+  transform: scale(0.95); /* Slightly shrink the button on click */
+  background: linear-gradient(45deg, #025a0238, #037b0313); /* Revert to original gradient on click */
+}
+
+.csv-import-export a:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(3, 123, 3, 0.5); /* Add focus outline for accessibility */
+}
